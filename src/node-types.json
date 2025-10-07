@@ -1,0 +1,1064 @@
+[
+  {
+    "type": "arguments",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "control_flow",
+          "named": true
+        },
+        {
+          "type": "identifier",
+          "named": true
+        },
+        {
+          "type": "ip_address",
+          "named": true
+        },
+        {
+          "type": "number",
+          "named": true
+        },
+        {
+          "type": "operator",
+          "named": true
+        },
+        {
+          "type": "parameter",
+          "named": true
+        },
+        {
+          "type": "path",
+          "named": true
+        },
+        {
+          "type": "string",
+          "named": true
+        },
+        {
+          "type": "time_value",
+          "named": true
+        },
+        {
+          "type": "wildcard_bind",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "capture_type",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": false,
+      "required": true,
+      "types": [
+        {
+          "type": "arguments",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "control_flow",
+    "named": true,
+    "fields": {}
+  },
+  {
+    "type": "directive",
+    "named": true,
+    "fields": {
+      "args": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "arguments",
+            "named": true
+          }
+        ]
+      },
+      "keyword": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "keyword",
+            "named": true
+          },
+          {
+            "type": "keyword_combination",
+            "named": true
+          }
+        ]
+      }
+    }
+  },
+  {
+    "type": "http_action",
+    "named": true,
+    "fields": {}
+  },
+  {
+    "type": "http_check_option",
+    "named": true,
+    "fields": {}
+  },
+  {
+    "type": "keyword",
+    "named": true,
+    "fields": {}
+  },
+  {
+    "type": "keyword_combination",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": false,
+      "required": false,
+      "types": [
+        {
+          "type": "arguments",
+          "named": true
+        },
+        {
+          "type": "capture_type",
+          "named": true
+        },
+        {
+          "type": "http_action",
+          "named": true
+        },
+        {
+          "type": "http_check_option",
+          "named": true
+        },
+        {
+          "type": "option_value",
+          "named": true
+        },
+        {
+          "type": "stats_option",
+          "named": true
+        },
+        {
+          "type": "stick_option",
+          "named": true
+        },
+        {
+          "type": "tcp_request_type",
+          "named": true
+        },
+        {
+          "type": "tcp_response_type",
+          "named": true
+        },
+        {
+          "type": "timeout_type",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "operator",
+    "named": true,
+    "fields": {}
+  },
+  {
+    "type": "option_value",
+    "named": true,
+    "fields": {}
+  },
+  {
+    "type": "section",
+    "named": true,
+    "fields": {
+      "name": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "identifier",
+            "named": true
+          }
+        ]
+      },
+      "type": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "section_name",
+            "named": true
+          }
+        ]
+      }
+    },
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "directive",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "section_name",
+    "named": true,
+    "fields": {}
+  },
+  {
+    "type": "source_file",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "comment",
+          "named": true
+        },
+        {
+          "type": "directive",
+          "named": true
+        },
+        {
+          "type": "section",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "stats_option",
+    "named": true,
+    "fields": {}
+  },
+  {
+    "type": "stick_option",
+    "named": true,
+    "fields": {}
+  },
+  {
+    "type": "tcp_request_type",
+    "named": true,
+    "fields": {}
+  },
+  {
+    "type": "tcp_response_type",
+    "named": true,
+    "fields": {}
+  },
+  {
+    "type": "timeout_type",
+    "named": true,
+    "fields": {}
+  },
+  {
+    "type": "!",
+    "named": false
+  },
+  {
+    "type": "abortonclose",
+    "named": false
+  },
+  {
+    "type": "accept-invalid-http-request",
+    "named": false
+  },
+  {
+    "type": "accept-invalid-http-response",
+    "named": false
+  },
+  {
+    "type": "acl",
+    "named": false
+  },
+  {
+    "type": "add-acl",
+    "named": false
+  },
+  {
+    "type": "add-header",
+    "named": false
+  },
+  {
+    "type": "admin",
+    "named": false
+  },
+  {
+    "type": "aggregations",
+    "named": false
+  },
+  {
+    "type": "allbackups",
+    "named": false
+  },
+  {
+    "type": "allow",
+    "named": false
+  },
+  {
+    "type": "auth",
+    "named": false
+  },
+  {
+    "type": "backend",
+    "named": false
+  },
+  {
+    "type": "backlog",
+    "named": false
+  },
+  {
+    "type": "balance",
+    "named": false
+  },
+  {
+    "type": "bind",
+    "named": false
+  },
+  {
+    "type": "bind-process",
+    "named": false
+  },
+  {
+    "type": "ca-base",
+    "named": false
+  },
+  {
+    "type": "capture",
+    "named": false
+  },
+  {
+    "type": "check",
+    "named": false
+  },
+  {
+    "type": "checkcache",
+    "named": false
+  },
+  {
+    "type": "chroot",
+    "named": false
+  },
+  {
+    "type": "client",
+    "named": false
+  },
+  {
+    "type": "clitcpka",
+    "named": false
+  },
+  {
+    "type": "comment",
+    "named": true
+  },
+  {
+    "type": "compression",
+    "named": false
+  },
+  {
+    "type": "connect",
+    "named": false
+  },
+  {
+    "type": "connection",
+    "named": false
+  },
+  {
+    "type": "content",
+    "named": false
+  },
+  {
+    "type": "contstats",
+    "named": false
+  },
+  {
+    "type": "cookie",
+    "named": false
+  },
+  {
+    "type": "cpu-map",
+    "named": false
+  },
+  {
+    "type": "crt-base",
+    "named": false
+  },
+  {
+    "type": "daemon",
+    "named": false
+  },
+  {
+    "type": "default-server",
+    "named": false
+  },
+  {
+    "type": "default_backend",
+    "named": false
+  },
+  {
+    "type": "defaults",
+    "named": false
+  },
+  {
+    "type": "del-acl",
+    "named": false
+  },
+  {
+    "type": "del-header",
+    "named": false
+  },
+  {
+    "type": "del-map",
+    "named": false
+  },
+  {
+    "type": "deny",
+    "named": false
+  },
+  {
+    "type": "description",
+    "named": false
+  },
+  {
+    "type": "disable-on-404",
+    "named": false
+  },
+  {
+    "type": "disabled",
+    "named": false
+  },
+  {
+    "type": "dispatch",
+    "named": false
+  },
+  {
+    "type": "dontlog-normal",
+    "named": false
+  },
+  {
+    "type": "dontlognull",
+    "named": false
+  },
+  {
+    "type": "enable",
+    "named": false
+  },
+  {
+    "type": "enabled",
+    "named": false
+  },
+  {
+    "type": "errorfile",
+    "named": false
+  },
+  {
+    "type": "expect",
+    "named": false
+  },
+  {
+    "type": "fail",
+    "named": false
+  },
+  {
+    "type": "force-persist",
+    "named": false
+  },
+  {
+    "type": "forceclose",
+    "named": false
+  },
+  {
+    "type": "forwardfor",
+    "named": false
+  },
+  {
+    "type": "frontend",
+    "named": false
+  },
+  {
+    "type": "global",
+    "named": false
+  },
+  {
+    "type": "grace",
+    "named": false
+  },
+  {
+    "type": "group",
+    "named": false
+  },
+  {
+    "type": "hash-type",
+    "named": false
+  },
+  {
+    "type": "header",
+    "named": false
+  },
+  {
+    "type": "hide-version",
+    "named": false
+  },
+  {
+    "type": "http-check",
+    "named": false
+  },
+  {
+    "type": "http-keep-alive",
+    "named": false
+  },
+  {
+    "type": "http-no-delay",
+    "named": false
+  },
+  {
+    "type": "http-pretend-keepalive",
+    "named": false
+  },
+  {
+    "type": "http-request",
+    "named": false
+  },
+  {
+    "type": "http-response",
+    "named": false
+  },
+  {
+    "type": "http-server-close",
+    "named": false
+  },
+  {
+    "type": "http-use-proxy-header",
+    "named": false
+  },
+  {
+    "type": "http_proxy",
+    "named": false
+  },
+  {
+    "type": "httpchk",
+    "named": false
+  },
+  {
+    "type": "httpclose",
+    "named": false
+  },
+  {
+    "type": "httplog",
+    "named": false
+  },
+  {
+    "type": "id",
+    "named": false
+  },
+  {
+    "type": "identifier",
+    "named": true
+  },
+  {
+    "type": "if",
+    "named": false
+  },
+  {
+    "type": "ignore-persist",
+    "named": false
+  },
+  {
+    "type": "independent-streams",
+    "named": false
+  },
+  {
+    "type": "inspect-delay",
+    "named": false
+  },
+  {
+    "type": "ip_address",
+    "named": true
+  },
+  {
+    "type": "ldap-check",
+    "named": false
+  },
+  {
+    "type": "listen",
+    "named": false
+  },
+  {
+    "type": "log",
+    "named": false
+  },
+  {
+    "type": "log-format",
+    "named": false
+  },
+  {
+    "type": "log-health-checks",
+    "named": false
+  },
+  {
+    "type": "log-separate-errors",
+    "named": false
+  },
+  {
+    "type": "logasap",
+    "named": false
+  },
+  {
+    "type": "lua-load",
+    "named": false
+  },
+  {
+    "type": "match",
+    "named": false
+  },
+  {
+    "type": "maxconn",
+    "named": false
+  },
+  {
+    "type": "mode",
+    "named": false
+  },
+  {
+    "type": "monitor",
+    "named": false
+  },
+  {
+    "type": "monitor-net",
+    "named": false
+  },
+  {
+    "type": "monitor-uri",
+    "named": false
+  },
+  {
+    "type": "mysql-check",
+    "named": false
+  },
+  {
+    "type": "nameserver",
+    "named": false
+  },
+  {
+    "type": "nbproc",
+    "named": false
+  },
+  {
+    "type": "nolinger",
+    "named": false
+  },
+  {
+    "type": "number",
+    "named": true
+  },
+  {
+    "type": "on",
+    "named": false
+  },
+  {
+    "type": "option",
+    "named": false
+  },
+  {
+    "type": "or",
+    "named": false
+  },
+  {
+    "type": "originalto",
+    "named": false
+  },
+  {
+    "type": "parameter",
+    "named": true
+  },
+  {
+    "type": "path",
+    "named": true
+  },
+  {
+    "type": "peer",
+    "named": false
+  },
+  {
+    "type": "peers",
+    "named": false
+  },
+  {
+    "type": "persist",
+    "named": false
+  },
+  {
+    "type": "pgsql-check",
+    "named": false
+  },
+  {
+    "type": "queue",
+    "named": false
+  },
+  {
+    "type": "rate-limit",
+    "named": false
+  },
+  {
+    "type": "rdp-cookie",
+    "named": false
+  },
+  {
+    "type": "realm",
+    "named": false
+  },
+  {
+    "type": "redirect",
+    "named": false
+  },
+  {
+    "type": "redis-check",
+    "named": false
+  },
+  {
+    "type": "redispatch",
+    "named": false
+  },
+  {
+    "type": "refresh",
+    "named": false
+  },
+  {
+    "type": "replace-header",
+    "named": false
+  },
+  {
+    "type": "replace-value",
+    "named": false
+  },
+  {
+    "type": "reqadd",
+    "named": false
+  },
+  {
+    "type": "reqallow",
+    "named": false
+  },
+  {
+    "type": "reqdel",
+    "named": false
+  },
+  {
+    "type": "reqdeny",
+    "named": false
+  },
+  {
+    "type": "reqiallow",
+    "named": false
+  },
+  {
+    "type": "reqidel",
+    "named": false
+  },
+  {
+    "type": "reqideny",
+    "named": false
+  },
+  {
+    "type": "reqipass",
+    "named": false
+  },
+  {
+    "type": "reqirep",
+    "named": false
+  },
+  {
+    "type": "reqisetbe",
+    "named": false
+  },
+  {
+    "type": "reqitarpit",
+    "named": false
+  },
+  {
+    "type": "reqpass",
+    "named": false
+  },
+  {
+    "type": "reqrep",
+    "named": false
+  },
+  {
+    "type": "reqsetbe",
+    "named": false
+  },
+  {
+    "type": "reqtarpit",
+    "named": false
+  },
+  {
+    "type": "request",
+    "named": false
+  },
+  {
+    "type": "resolution_pool_size",
+    "named": false
+  },
+  {
+    "type": "resolve_retries",
+    "named": false
+  },
+  {
+    "type": "resolvers",
+    "named": false
+  },
+  {
+    "type": "response",
+    "named": false
+  },
+  {
+    "type": "retries",
+    "named": false
+  },
+  {
+    "type": "rewrite",
+    "named": false
+  },
+  {
+    "type": "rspadd",
+    "named": false
+  },
+  {
+    "type": "rspdel",
+    "named": false
+  },
+  {
+    "type": "rspdeny",
+    "named": false
+  },
+  {
+    "type": "rspidel",
+    "named": false
+  },
+  {
+    "type": "rspideny",
+    "named": false
+  },
+  {
+    "type": "rspirep",
+    "named": false
+  },
+  {
+    "type": "rsprep",
+    "named": false
+  },
+  {
+    "type": "scope",
+    "named": false
+  },
+  {
+    "type": "send-state",
+    "named": false
+  },
+  {
+    "type": "server",
+    "named": false
+  },
+  {
+    "type": "sessions",
+    "named": false
+  },
+  {
+    "type": "set-header",
+    "named": false
+  },
+  {
+    "type": "set-log-level",
+    "named": false
+  },
+  {
+    "type": "set-map",
+    "named": false
+  },
+  {
+    "type": "set-mark",
+    "named": false
+  },
+  {
+    "type": "set-nice",
+    "named": false
+  },
+  {
+    "type": "set-tos",
+    "named": false
+  },
+  {
+    "type": "show-desc",
+    "named": false
+  },
+  {
+    "type": "show-legends",
+    "named": false
+  },
+  {
+    "type": "show-node",
+    "named": false
+  },
+  {
+    "type": "smtpchk",
+    "named": false
+  },
+  {
+    "type": "socket",
+    "named": false
+  },
+  {
+    "type": "socket-stats",
+    "named": false
+  },
+  {
+    "type": "source",
+    "named": false
+  },
+  {
+    "type": "splice-auto",
+    "named": false
+  },
+  {
+    "type": "splice-request",
+    "named": false
+  },
+  {
+    "type": "splice-response",
+    "named": false
+  },
+  {
+    "type": "srvtcpka",
+    "named": false
+  },
+  {
+    "type": "ssl-hello-chk",
+    "named": false
+  },
+  {
+    "type": "stats",
+    "named": false
+  },
+  {
+    "type": "stick",
+    "named": false
+  },
+  {
+    "type": "stick-table",
+    "named": false
+  },
+  {
+    "type": "store-request",
+    "named": false
+  },
+  {
+    "type": "store-response",
+    "named": false
+  },
+  {
+    "type": "string",
+    "named": true
+  },
+  {
+    "type": "tarpit",
+    "named": false
+  },
+  {
+    "type": "tcp-check",
+    "named": false
+  },
+  {
+    "type": "tcp-request",
+    "named": false
+  },
+  {
+    "type": "tcp-response",
+    "named": false
+  },
+  {
+    "type": "tcp-smart-accept",
+    "named": false
+  },
+  {
+    "type": "tcp-smart-connect",
+    "named": false
+  },
+  {
+    "type": "tcpka",
+    "named": false
+  },
+  {
+    "type": "tcplog",
+    "named": false
+  },
+  {
+    "type": "time_value",
+    "named": true
+  },
+  {
+    "type": "timeout",
+    "named": false
+  },
+  {
+    "type": "transparent",
+    "named": false
+  },
+  {
+    "type": "tunnel",
+    "named": false
+  },
+  {
+    "type": "unique-id-format",
+    "named": false
+  },
+  {
+    "type": "unique-id-header",
+    "named": false
+  },
+  {
+    "type": "unless",
+    "named": false
+  },
+  {
+    "type": "uri",
+    "named": false
+  },
+  {
+    "type": "use-server",
+    "named": false
+  },
+  {
+    "type": "use_backend",
+    "named": false
+  },
+  {
+    "type": "user",
+    "named": false
+  },
+  {
+    "type": "userlist",
+    "named": false
+  },
+  {
+    "type": "wildcard_bind",
+    "named": true
+  },
+  {
+    "type": "||",
+    "named": false
+  }
+]

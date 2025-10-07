@@ -1,0 +1,28 @@
+{
+  "name": "tree-sitter-haproxy",
+  "version": "0.1.0",
+  "description": "HAProxy grammar for tree-sitter",
+  "main": "bindings/node",
+  "keywords": [
+    "parser",
+    "haproxy"
+  ],
+  "author": "Brandon Froehlich",
+  "license": "MIT",
+  "dependencies": {
+    "node-addon-api": "^7.1.0",
+    "node-gyp-build": "^4.8.0"
+  },
+  "devDependencies": {
+    "tree-sitter-cli": "^0.20.8"
+  },
+  "tree-sitter": [
+    {
+      "scope": "source.haproxy",
+      "file-types": [
+        "cfg"
+      ],
+      "highlights": "queries/highlights.scm"
+    }
+  ]
+}

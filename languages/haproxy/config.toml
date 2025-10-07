@@ -1,0 +1,6 @@
+name = "HAProxy"
+grammar = "haproxy"
+path_suffixes = ["cfg"]
+line_comments = ["# "]
+tab_size = 4
+hard_tabs = false

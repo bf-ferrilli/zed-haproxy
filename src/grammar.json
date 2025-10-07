@@ -1,0 +1,1250 @@
+{
+  "name": "haproxy",
+  "rules": {
+    "source_file": {
+      "type": "REPEAT",
+      "content": {
+        "type": "SYMBOL",
+        "name": "_statement"
+      }
+    },
+    "_statement": {
+      "type": "CHOICE",
+      "members": [
+        {
+          "type": "SYMBOL",
+          "name": "section"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "directive"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "comment"
+        }
+      ]
+    },
+    "comment": {
+      "type": "PATTERN",
+      "value": "#.*"
+    },
+    "section": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "FIELD",
+          "name": "type",
+          "content": {
+            "type": "SYMBOL",
+            "name": "section_name"
+          }
+        },
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "FIELD",
+              "name": "name",
+              "content": {
+                "type": "SYMBOL",
+                "name": "identifier"
+              }
+            },
+            {
+              "type": "BLANK"
+            }
+          ]
+        },
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "REPEAT",
+              "content": {
+                "type": "SYMBOL",
+                "name": "directive"
+              }
+            },
+            {
+              "type": "BLANK"
+            }
+          ]
+        }
+      ]
+    },
+    "section_name": {
+      "type": "CHOICE",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "global"
+        },
+        {
+          "type": "STRING",
+          "value": "defaults"
+        },
+        {
+          "type": "STRING",
+          "value": "frontend"
+        },
+        {
+          "type": "STRING",
+          "value": "backend"
+        },
+        {
+          "type": "STRING",
+          "value": "listen"
+        },
+        {
+          "type": "STRING",
+          "value": "peers"
+        },
+        {
+          "type": "STRING",
+          "value": "resolvers"
+        },
+        {
+          "type": "STRING",
+          "value": "userlist"
+        },
+        {
+          "type": "STRING",
+          "value": "aggregations"
+        }
+      ]
+    },
+    "directive": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "FIELD",
+          "name": "keyword",
+          "content": {
+            "type": "CHOICE",
+            "members": [
+              {
+                "type": "SYMBOL",
+                "name": "keyword"
+              },
+              {
+                "type": "SYMBOL",
+                "name": "keyword_combination"
+              }
+            ]
+          }
+        },
+        {
+          "type": "FIELD",
+          "name": "args",
+          "content": {
+            "type": "CHOICE",
+            "members": [
+              {
+                "type": "SYMBOL",
+                "name": "arguments"
+              },
+              {
+                "type": "BLANK"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "keyword": {
+      "type": "CHOICE",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "acl"
+        },
+        {
+          "type": "STRING",
+          "value": "bind"
+        },
+        {
+          "type": "STRING",
+          "value": "server"
+        },
+        {
+          "type": "STRING",
+          "value": "balance"
+        },
+        {
+          "type": "STRING",
+          "value": "mode"
+        },
+        {
+          "type": "STRING",
+          "value": "maxconn"
+        },
+        {
+          "type": "STRING",
+          "value": "user"
+        },
+        {
+          "type": "STRING",
+          "value": "group"
+        },
+        {
+          "type": "STRING",
+          "value": "daemon"
+        },
+        {
+          "type": "STRING",
+          "value": "log"
+        },
+        {
+          "type": "STRING",
+          "value": "retries"
+        },
+        {
+          "type": "STRING",
+          "value": "cookie"
+        },
+        {
+          "type": "STRING",
+          "value": "errorfile"
+        },
+        {
+          "type": "STRING",
+          "value": "default_backend"
+        },
+        {
+          "type": "STRING",
+          "value": "use_backend"
+        },
+        {
+          "type": "STRING",
+          "value": "compression"
+        },
+        {
+          "type": "STRING",
+          "value": "redirect"
+        },
+        {
+          "type": "STRING",
+          "value": "source"
+        },
+        {
+          "type": "STRING",
+          "value": "id"
+        },
+        {
+          "type": "STRING",
+          "value": "disabled"
+        },
+        {
+          "type": "STRING",
+          "value": "enabled"
+        },
+        {
+          "type": "STRING",
+          "value": "dispatch"
+        },
+        {
+          "type": "STRING",
+          "value": "backlog"
+        },
+        {
+          "type": "STRING",
+          "value": "description"
+        },
+        {
+          "type": "STRING",
+          "value": "chroot"
+        },
+        {
+          "type": "STRING",
+          "value": "ca-base"
+        },
+        {
+          "type": "STRING",
+          "value": "crt-base"
+        },
+        {
+          "type": "STRING",
+          "value": "nbproc"
+        },
+        {
+          "type": "STRING",
+          "value": "cpu-map"
+        },
+        {
+          "type": "STRING",
+          "value": "lua-load"
+        },
+        {
+          "type": "STRING",
+          "value": "monitor-net"
+        },
+        {
+          "type": "STRING",
+          "value": "monitor-uri"
+        },
+        {
+          "type": "STRING",
+          "value": "grace"
+        },
+        {
+          "type": "STRING",
+          "value": "hash-type"
+        },
+        {
+          "type": "STRING",
+          "value": "force-persist"
+        },
+        {
+          "type": "STRING",
+          "value": "ignore-persist"
+        },
+        {
+          "type": "STRING",
+          "value": "bind-process"
+        },
+        {
+          "type": "STRING",
+          "value": "default-server"
+        },
+        {
+          "type": "STRING",
+          "value": "log-format"
+        },
+        {
+          "type": "STRING",
+          "value": "unique-id-format"
+        },
+        {
+          "type": "STRING",
+          "value": "unique-id-header"
+        },
+        {
+          "type": "STRING",
+          "value": "nameserver"
+        },
+        {
+          "type": "STRING",
+          "value": "peer"
+        },
+        {
+          "type": "STRING",
+          "value": "resolution_pool_size"
+        },
+        {
+          "type": "STRING",
+          "value": "resolve_retries"
+        },
+        {
+          "type": "STRING",
+          "value": "reqadd"
+        },
+        {
+          "type": "STRING",
+          "value": "reqallow"
+        },
+        {
+          "type": "STRING",
+          "value": "reqdel"
+        },
+        {
+          "type": "STRING",
+          "value": "reqdeny"
+        },
+        {
+          "type": "STRING",
+          "value": "reqiallow"
+        },
+        {
+          "type": "STRING",
+          "value": "reqidel"
+        },
+        {
+          "type": "STRING",
+          "value": "reqideny"
+        },
+        {
+          "type": "STRING",
+          "value": "reqipass"
+        },
+        {
+          "type": "STRING",
+          "value": "reqirep"
+        },
+        {
+          "type": "STRING",
+          "value": "reqisetbe"
+        },
+        {
+          "type": "STRING",
+          "value": "reqitarpit"
+        },
+        {
+          "type": "STRING",
+          "value": "reqpass"
+        },
+        {
+          "type": "STRING",
+          "value": "reqrep"
+        },
+        {
+          "type": "STRING",
+          "value": "reqsetbe"
+        },
+        {
+          "type": "STRING",
+          "value": "reqtarpit"
+        },
+        {
+          "type": "STRING",
+          "value": "rspadd"
+        },
+        {
+          "type": "STRING",
+          "value": "rspdel"
+        },
+        {
+          "type": "STRING",
+          "value": "rspdeny"
+        },
+        {
+          "type": "STRING",
+          "value": "rspidel"
+        },
+        {
+          "type": "STRING",
+          "value": "rspideny"
+        },
+        {
+          "type": "STRING",
+          "value": "rspirep"
+        },
+        {
+          "type": "STRING",
+          "value": "rsprep"
+        }
+      ]
+    },
+    "keyword_combination": {
+      "type": "CHOICE",
+      "members": [
+        {
+          "type": "SEQ",
+          "members": [
+            {
+              "type": "STRING",
+              "value": "option"
+            },
+            {
+              "type": "SYMBOL",
+              "name": "option_value"
+            }
+          ]
+        },
+        {
+          "type": "SEQ",
+          "members": [
+            {
+              "type": "STRING",
+              "value": "timeout"
+            },
+            {
+              "type": "SYMBOL",
+              "name": "timeout_type"
+            }
+          ]
+        },
+        {
+          "type": "SEQ",
+          "members": [
+            {
+              "type": "STRING",
+              "value": "stats"
+            },
+            {
+              "type": "SYMBOL",
+              "name": "stats_option"
+            }
+          ]
+        },
+        {
+          "type": "SEQ",
+          "members": [
+            {
+              "type": "STRING",
+              "value": "http-request"
+            },
+            {
+              "type": "SYMBOL",
+              "name": "http_action"
+            }
+          ]
+        },
+        {
+          "type": "SEQ",
+          "members": [
+            {
+              "type": "STRING",
+              "value": "http-response"
+            },
+            {
+              "type": "SYMBOL",
+              "name": "http_action"
+            }
+          ]
+        },
+        {
+          "type": "SEQ",
+          "members": [
+            {
+              "type": "STRING",
+              "value": "http-check"
+            },
+            {
+              "type": "SYMBOL",
+              "name": "http_check_option"
+            }
+          ]
+        },
+        {
+          "type": "SEQ",
+          "members": [
+            {
+              "type": "STRING",
+              "value": "tcp-request"
+            },
+            {
+              "type": "SYMBOL",
+              "name": "tcp_request_type"
+            }
+          ]
+        },
+        {
+          "type": "SEQ",
+          "members": [
+            {
+              "type": "STRING",
+              "value": "tcp-response"
+            },
+            {
+              "type": "SYMBOL",
+              "name": "tcp_response_type"
+            }
+          ]
+        },
+        {
+          "type": "SEQ",
+          "members": [
+            {
+              "type": "STRING",
+              "value": "stick"
+            },
+            {
+              "type": "SYMBOL",
+              "name": "stick_option"
+            }
+          ]
+        },
+        {
+          "type": "SEQ",
+          "members": [
+            {
+              "type": "STRING",
+              "value": "stick-table"
+            },
+            {
+              "type": "SYMBOL",
+              "name": "arguments"
+            }
+          ]
+        },
+        {
+          "type": "SEQ",
+          "members": [
+            {
+              "type": "STRING",
+              "value": "capture"
+            },
+            {
+              "type": "SYMBOL",
+              "name": "capture_type"
+            }
+          ]
+        },
+        {
+          "type": "SEQ",
+          "members": [
+            {
+              "type": "STRING",
+              "value": "use-server"
+            },
+            {
+              "type": "SYMBOL",
+              "name": "arguments"
+            }
+          ]
+        },
+        {
+          "type": "SEQ",
+          "members": [
+            {
+              "type": "STRING",
+              "value": "monitor"
+            },
+            {
+              "type": "STRING",
+              "value": "fail"
+            }
+          ]
+        },
+        {
+          "type": "SEQ",
+          "members": [
+            {
+              "type": "STRING",
+              "value": "rate-limit"
+            },
+            {
+              "type": "STRING",
+              "value": "sessions"
+            }
+          ]
+        },
+        {
+          "type": "SEQ",
+          "members": [
+            {
+              "type": "STRING",
+              "value": "persist"
+            },
+            {
+              "type": "STRING",
+              "value": "rdp-cookie"
+            }
+          ]
+        }
+      ]
+    },
+    "option_value": {
+      "type": "CHOICE",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "httplog"
+        },
+        {
+          "type": "STRING",
+          "value": "tcplog"
+        },
+        {
+          "type": "STRING",
+          "value": "httpchk"
+        },
+        {
+          "type": "STRING",
+          "value": "forwardfor"
+        },
+        {
+          "type": "STRING",
+          "value": "redispatch"
+        },
+        {
+          "type": "STRING",
+          "value": "abortonclose"
+        },
+        {
+          "type": "STRING",
+          "value": "accept-invalid-http-request"
+        },
+        {
+          "type": "STRING",
+          "value": "accept-invalid-http-response"
+        },
+        {
+          "type": "STRING",
+          "value": "allbackups"
+        },
+        {
+          "type": "STRING",
+          "value": "checkcache"
+        },
+        {
+          "type": "STRING",
+          "value": "clitcpka"
+        },
+        {
+          "type": "STRING",
+          "value": "contstats"
+        },
+        {
+          "type": "STRING",
+          "value": "dontlog-normal"
+        },
+        {
+          "type": "STRING",
+          "value": "dontlognull"
+        },
+        {
+          "type": "STRING",
+          "value": "forceclose"
+        },
+        {
+          "type": "STRING",
+          "value": "http-no-delay"
+        },
+        {
+          "type": "STRING",
+          "value": "http-pretend-keepalive"
+        },
+        {
+          "type": "STRING",
+          "value": "http-server-close"
+        },
+        {
+          "type": "STRING",
+          "value": "http-use-proxy-header"
+        },
+        {
+          "type": "STRING",
+          "value": "httpclose"
+        },
+        {
+          "type": "STRING",
+          "value": "http_proxy"
+        },
+        {
+          "type": "STRING",
+          "value": "independent-streams"
+        },
+        {
+          "type": "STRING",
+          "value": "ldap-check"
+        },
+        {
+          "type": "STRING",
+          "value": "log-health-checks"
+        },
+        {
+          "type": "STRING",
+          "value": "log-separate-errors"
+        },
+        {
+          "type": "STRING",
+          "value": "logasap"
+        },
+        {
+          "type": "STRING",
+          "value": "mysql-check"
+        },
+        {
+          "type": "STRING",
+          "value": "pgsql-check"
+        },
+        {
+          "type": "STRING",
+          "value": "nolinger"
+        },
+        {
+          "type": "STRING",
+          "value": "originalto"
+        },
+        {
+          "type": "STRING",
+          "value": "persist"
+        },
+        {
+          "type": "STRING",
+          "value": "redis-check"
+        },
+        {
+          "type": "STRING",
+          "value": "smtpchk"
+        },
+        {
+          "type": "STRING",
+          "value": "socket-stats"
+        },
+        {
+          "type": "STRING",
+          "value": "splice-auto"
+        },
+        {
+          "type": "STRING",
+          "value": "splice-request"
+        },
+        {
+          "type": "STRING",
+          "value": "splice-response"
+        },
+        {
+          "type": "STRING",
+          "value": "srvtcpka"
+        },
+        {
+          "type": "STRING",
+          "value": "ssl-hello-chk"
+        },
+        {
+          "type": "STRING",
+          "value": "tcp-check"
+        },
+        {
+          "type": "STRING",
+          "value": "tcp-smart-accept"
+        },
+        {
+          "type": "STRING",
+          "value": "tcp-smart-connect"
+        },
+        {
+          "type": "STRING",
+          "value": "tcpka"
+        },
+        {
+          "type": "STRING",
+          "value": "transparent"
+        }
+      ]
+    },
+    "timeout_type": {
+      "type": "CHOICE",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "check"
+        },
+        {
+          "type": "STRING",
+          "value": "client"
+        },
+        {
+          "type": "STRING",
+          "value": "connect"
+        },
+        {
+          "type": "STRING",
+          "value": "http-keep-alive"
+        },
+        {
+          "type": "STRING",
+          "value": "http-request"
+        },
+        {
+          "type": "STRING",
+          "value": "queue"
+        },
+        {
+          "type": "STRING",
+          "value": "server"
+        },
+        {
+          "type": "STRING",
+          "value": "tarpit"
+        },
+        {
+          "type": "STRING",
+          "value": "tunnel"
+        }
+      ]
+    },
+    "stats_option": {
+      "type": "CHOICE",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "enable"
+        },
+        {
+          "type": "STRING",
+          "value": "uri"
+        },
+        {
+          "type": "STRING",
+          "value": "realm"
+        },
+        {
+          "type": "STRING",
+          "value": "auth"
+        },
+        {
+          "type": "STRING",
+          "value": "refresh"
+        },
+        {
+          "type": "STRING",
+          "value": "admin"
+        },
+        {
+          "type": "STRING",
+          "value": "hide-version"
+        },
+        {
+          "type": "STRING",
+          "value": "show-desc"
+        },
+        {
+          "type": "STRING",
+          "value": "show-legends"
+        },
+        {
+          "type": "STRING",
+          "value": "show-node"
+        },
+        {
+          "type": "STRING",
+          "value": "socket"
+        },
+        {
+          "type": "STRING",
+          "value": "timeout"
+        },
+        {
+          "type": "STRING",
+          "value": "http-request"
+        },
+        {
+          "type": "STRING",
+          "value": "bind-process"
+        },
+        {
+          "type": "STRING",
+          "value": "scope"
+        }
+      ]
+    },
+    "http_action": {
+      "type": "CHOICE",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "add-header"
+        },
+        {
+          "type": "STRING",
+          "value": "set-header"
+        },
+        {
+          "type": "STRING",
+          "value": "del-header"
+        },
+        {
+          "type": "STRING",
+          "value": "replace-header"
+        },
+        {
+          "type": "STRING",
+          "value": "replace-value"
+        },
+        {
+          "type": "STRING",
+          "value": "deny"
+        },
+        {
+          "type": "STRING",
+          "value": "allow"
+        },
+        {
+          "type": "STRING",
+          "value": "auth"
+        },
+        {
+          "type": "STRING",
+          "value": "redirect"
+        },
+        {
+          "type": "STRING",
+          "value": "set-log-level"
+        },
+        {
+          "type": "STRING",
+          "value": "set-nice"
+        },
+        {
+          "type": "STRING",
+          "value": "set-tos"
+        },
+        {
+          "type": "STRING",
+          "value": "set-mark"
+        },
+        {
+          "type": "STRING",
+          "value": "add-acl"
+        },
+        {
+          "type": "STRING",
+          "value": "del-acl"
+        },
+        {
+          "type": "STRING",
+          "value": "set-map"
+        },
+        {
+          "type": "STRING",
+          "value": "del-map"
+        }
+      ]
+    },
+    "http_check_option": {
+      "type": "CHOICE",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "disable-on-404"
+        },
+        {
+          "type": "STRING",
+          "value": "expect"
+        },
+        {
+          "type": "STRING",
+          "value": "send-state"
+        }
+      ]
+    },
+    "tcp_request_type": {
+      "type": "CHOICE",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "connection"
+        },
+        {
+          "type": "STRING",
+          "value": "content"
+        },
+        {
+          "type": "STRING",
+          "value": "inspect-delay"
+        }
+      ]
+    },
+    "tcp_response_type": {
+      "type": "CHOICE",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "content"
+        },
+        {
+          "type": "STRING",
+          "value": "inspect-delay"
+        }
+      ]
+    },
+    "stick_option": {
+      "type": "CHOICE",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "match"
+        },
+        {
+          "type": "STRING",
+          "value": "on"
+        },
+        {
+          "type": "STRING",
+          "value": "store-request"
+        },
+        {
+          "type": "STRING",
+          "value": "store-response"
+        }
+      ]
+    },
+    "capture_type": {
+      "type": "CHOICE",
+      "members": [
+        {
+          "type": "SEQ",
+          "members": [
+            {
+              "type": "STRING",
+              "value": "cookie"
+            },
+            {
+              "type": "SYMBOL",
+              "name": "arguments"
+            }
+          ]
+        },
+        {
+          "type": "SEQ",
+          "members": [
+            {
+              "type": "STRING",
+              "value": "request"
+            },
+            {
+              "type": "STRING",
+              "value": "header"
+            },
+            {
+              "type": "SYMBOL",
+              "name": "arguments"
+            }
+          ]
+        },
+        {
+          "type": "SEQ",
+          "members": [
+            {
+              "type": "STRING",
+              "value": "response"
+            },
+            {
+              "type": "STRING",
+              "value": "header"
+            },
+            {
+              "type": "SYMBOL",
+              "name": "arguments"
+            }
+          ]
+        }
+      ]
+    },
+    "arguments": {
+      "type": "REPEAT1",
+      "content": {
+        "type": "SYMBOL",
+        "name": "_argument"
+      }
+    },
+    "_argument": {
+      "type": "CHOICE",
+      "members": [
+        {
+          "type": "SYMBOL",
+          "name": "string"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "ip_address"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "wildcard_bind"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "number"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "time_value"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "parameter"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "operator"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "control_flow"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "identifier"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "path"
+        }
+      ]
+    },
+    "string": {
+      "type": "PATTERN",
+      "value": "\"[^\"]*\""
+    },
+    "ip_address": {
+      "type": "PATTERN",
+      "value": "(?:(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\\.){3}(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?):\\d{1,5}"
+    },
+    "wildcard_bind": {
+      "type": "PATTERN",
+      "value": "\\*:\\d{1,5}"
+    },
+    "number": {
+      "type": "PATTERN",
+      "value": "\\d+"
+    },
+    "time_value": {
+      "type": "PATTERN",
+      "value": "\\d+(ms|s|m|h|d)"
+    },
+    "parameter": {
+      "type": "PATTERN",
+      "value": "%\\[[^\\]]+\\]"
+    },
+    "operator": {
+      "type": "CHOICE",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "or"
+        },
+        {
+          "type": "STRING",
+          "value": "||"
+        },
+        {
+          "type": "STRING",
+          "value": "!"
+        }
+      ]
+    },
+    "control_flow": {
+      "type": "CHOICE",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "if"
+        },
+        {
+          "type": "STRING",
+          "value": "unless"
+        },
+        {
+          "type": "STRING",
+          "value": "rewrite"
+        }
+      ]
+    },
+    "identifier": {
+      "type": "PATTERN",
+      "value": "[a-zA-Z_][a-zA-Z0-9_\\-]*"
+    },
+    "path": {
+      "type": "PATTERN",
+      "value": "\\/[-+\\w\\/\\\\|^.:;@%!$*?=~(){}\\[\\]`\"'#<>&]*"
+    }
+  },
+  "extras": [
+    {
+      "type": "PATTERN",
+      "value": "\\s"
+    },
+    {
+      "type": "SYMBOL",
+      "name": "comment"
+    }
+  ],
+  "conflicts": [
+    [
+      "arguments"
+    ],
+    [
+      "section"
+    ]
+  ],
+  "precedences": [],
+  "externals": [],
+  "inline": [],
+  "supertypes": []
+}
+
