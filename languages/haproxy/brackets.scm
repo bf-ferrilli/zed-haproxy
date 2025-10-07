@@ -1,3 +1,1 @@
-("(" @open ")" @close)
-("{" @open "}" @close)
-("[" @open "]" @close)
+; HAProxy configs don't have meaningful bracket pairs
